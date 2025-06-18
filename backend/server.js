@@ -22,7 +22,14 @@ const io = new Server(server, {
 
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000", 
+    "https://disaster-response-coordination-plat-three.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 // Initialize Supabase
