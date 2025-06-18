@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const API_BASE_URL = 'https://disaster-response-coordination-platform.onrender.com';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 const socket = io(API_BASE_URL);
 
 
